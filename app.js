@@ -91,6 +91,7 @@ const ICON = {
 };
 
 const logo = '<span class="recre">Recre</span>Recetas';
+const logoCabecera = '<img src="icons/escudo.png" alt=""><span><span class="recre">Recre</span>Recetas</span>';
 
 // ---------------------------------------------------------------------
 // Datos
@@ -128,7 +129,7 @@ function vistaLogin() {
   app.innerHTML = `
     <div class="center">
       <div class="hero">
-        <img src="icons/icon-192.png" alt="">
+        <img src="icons/escudo.png" alt="Escudo UD Recreamos">
         <h1>${logo}</h1>
         <p>El recetario de los amigos. Entra con tu cuenta de Google.</p>
         <button class="google-btn" id="login">${ICON.google}Entrar con Google</button>
@@ -147,7 +148,7 @@ function vistaNoInvitado() {
   app.innerHTML = `
     <div class="center">
       <div class="hero">
-        <img src="icons/icon-192.png" alt="">
+        <img src="icons/escudo.png" alt="Escudo UD Recreamos">
         <h1>${logo}</h1>
         <p>La cuenta <strong>${esc(myEmail())}</strong> todavía no está invitada. Pide a quien te pasó el enlace que te añada y vuelve a entrar.</p>
         <button class="btn primary" id="retry" style="flex:none">Ya me han invitado</button><br>
@@ -185,7 +186,7 @@ function listaHTML() {
 function vistaLista() {
   app.innerHTML = `
     <header class="top">
-      <h1>${logo}</h1>
+      <h1>${logoCabecera}</h1>
       <button class="icon-btn" id="menu-btn" aria-label="Menú">${ICON.menu}</button>
     </header>
     ${state.offline ? '<div class="offline">Sin conexión: estás viendo la última copia guardada.</div>' : ''}
