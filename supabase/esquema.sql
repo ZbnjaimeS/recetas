@@ -13,7 +13,7 @@ create table if not exists public.invitados (
 
 create table if not exists public.recetas (
   id             uuid primary key default gen_random_uuid(),
-  categoria      text not null check (categoria in ('comida', 'cena', 'otros')),
+  categoria      text not null check (categoria in ('desayuno', 'comida', 'cena', 'reposteria', 'otros')),
   titulo         text not null check (length(trim(titulo)) > 0),
   raciones       int  not null default 2 check (raciones between 1 and 50),
   ingredientes   text[] not null default '{}',

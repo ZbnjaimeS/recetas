@@ -11,12 +11,14 @@ const sb = createClient(SUPABASE_URL, SUPABASE_KEY, {
 });
 
 const CATS = [
+  { id: 'desayuno', label: 'Desayuno' },
   { id: 'comida', label: 'Comida' },
   { id: 'cena', label: 'Cena' },
+  { id: 'reposteria', label: 'Repostería' },
   { id: 'otros', label: 'Otros' },
   { id: 'todo', label: 'Todo' }
 ];
-const CAT_LABEL = { comida: 'Comida', cena: 'Cena', otros: 'Otros' };
+const CAT_LABEL = Object.fromEntries(CATS.filter((c) => c.id !== 'todo').map((c) => [c.id, c.label]));
 
 // ---------------------------------------------------------------------
 // Estado
@@ -28,7 +30,7 @@ const state = {
   recetas: loadCache(),
   cargado: false,
   offline: false,
-  filtro: localStorage.getItem('filtro') || 'todo',
+  filtro: CATS.some((c) => c.id === localStorage.getItem('filtro')) ? localStorage.getItem('filtro') : 'todo',
   busqueda: '',
   invitados: []
 };

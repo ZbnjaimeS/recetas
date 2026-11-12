@@ -1,5 +1,5 @@
 // Service worker: la app abre sin conexión; los datos se piden siempre a Supabase.
-const CACHE = 'recrerecetas-v2';
+const CACHE = 'recrerecetas-v3';
 const SHELL = [
   './', './index.html', './styles.css', './app.js', './manifest.webmanifest',
   './icons/icon-192.png', './icons/icon-512.png', './icons/favicon.png', './icons/escudo.png'
